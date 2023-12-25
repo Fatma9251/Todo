@@ -1,0 +1,54 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+  }
+  
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+  }
+  
+  table {
+    border-radius: 12px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin-top: 20px;
+    background-color: #072233;
+    color: #fff;
+  }
+  th{
+    border: 2px solid #1a3b4c;
+    text-align: center; 
+    padding: 12px;
+    font-size: 20px;
+  }
+  td {
+    border: 1px solid #1a3b4c;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .TaskTile {
+    background-color: #1a3b4c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .TaskTile:hover {
+    transform: scale(1.05);
+    background-color: #072233;
+    cursor: pointer;
+  }
+  

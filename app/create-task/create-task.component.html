@@ -1,0 +1,15 @@
+<div class = "create_it">
+    <label for="description">Task Description:</label>
+    <input type="text" id="description" value="add description" [(ngModel)]="taskDescription" />
+
+    <label for="status">Task Status:</label>
+    <select id="status" 
+     [(ngModel)]="taskStatus">
+      <option value="" disabled selected>Select a status</option>  
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In_Progress</option>
+      <option value="Done">Done</option>
+    </select>
+
+    <button (click)="createTask()">Create Task</button>
+  </div>

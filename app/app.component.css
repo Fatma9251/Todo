@@ -1,0 +1,15 @@
+.header {
+    background-color: #072233; /* You can change the color to your preference */
+    color: #fff; /* Text color */
+    padding: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 8px;
+
+  }
+  
+  .header h1 {
+    font-size: 50px;
+    border-radius: 8px;
+    text-align: center;
+    margin:5px; /* Remove default margin for the h1 element */
+  }
