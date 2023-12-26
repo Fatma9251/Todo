@@ -40,7 +40,10 @@ export class TaskListComponent implements OnInit
 
   callDB() {
     this.taskService.getAllTasks().subscribe(
-    res => this.current_tasks = res as Task[],
+    res => {
+      const response = res as ApiResponse;
+      this.current_tasks = response.data as Task[]
+    },
     err => console.error(err)  
     );
   }
