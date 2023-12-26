@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Status } from '../../Status';
 import { TaskService, Task  } from '../services/TaskService';
 import { Router } from '@angular/router';
-import { CLIENT_RENEG_LIMIT } from 'tls';
+// import { CLIENT_RENEG_LIMIT } from 'tls';
 import { ApiService} from '../services/api.service';
 
 @Component({

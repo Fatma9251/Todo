@@ -17,46 +17,31 @@ export class TaskListComponent implements OnInit
     current_tasks : Task[] =[];//= [new Task("1st task", Status.Pending, false), new Task("2nd Task", Status.In_Progress, false)
  // ];
 
-  constructor(private taskService : ApiService, private router: Router) {
-    console.log("call service");
-    this.taskService.getAllTasks().subscribe(
-     res =>{
-      let response = res as ApiResponse;
-       this.current_tasks = response.data as Task[];
-       console.log("service called");
-       console.log(Object.keys(res));
-     }
-,
-err =>{ console.log(err);}    
-);
-    }
-  deleteTask():void{
+  constructor(private taskService : ApiService, private router: Router) { }
+
+  deleteTask(task: Task):void{
     console.log("inside delete");
       this.taskService
-      .deleteTaskById(this.taskId).subscribe(
+      .deleteTaskById(task.id).subscribe(
         res =>{
-          this.router.navigate(["/list"]);
+          this.callDB()
         },
         error => {
           console.log("error");
         }
       );
   }
-  DelTask(){
-    console.log("delete btn clicked");
+  DelTask(task:Task){
+    this.deleteTask(task)
   }
   ngOnInit(): void {
-//     console.log("call service");
-//      this.taskService.getAllTasks().subscribe(
-//       res =>{
-//         this.current_tasks = res as Task[];
-//         console.log("service called");
-//         console.log(this.current_tasks);
-//       }
-// ,
-// err =>{ console.log(err);}    
-// );
-    //this.taskService.tasks;
+    this.callDB()
   }
 
+  callDB() {
+    this.taskService.getAllTasks().subscribe(
+    res => this.current_tasks = res as Task[],
+    err => console.error(err)  
+    );
+  }
 }
